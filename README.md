@@ -43,4 +43,4 @@ The API documentation will come in handy. It describes all the endpoints of the 
 * Connect JUnit 4, RestAssured and Allure.
 * Write tests.
 * Make a report in Allure.
-### =================================================
+### ==================================================
