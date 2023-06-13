@@ -15,14 +15,12 @@ public class UserSteps {
                 .contentType(ContentType.JSON)
                 .baseUri(EndPoints.URL);
     }
-
     @Step("Create new user")
     public Response userCreate(UserModel user) {
         return requestSpec()
                 .body(user)
                 .post(EndPoints.REGISTER);
     }
-
     @Step("Change data of user")
     public Response userDataAccountChanging(UserModel newUser, String token) {
         return requestSpec()
@@ -30,7 +28,6 @@ public class UserSteps {
                 .body(newUser)
                 .patch(EndPoints.USER);
     }
-
     @Step("User authorized by login and token")
     public Response userLoginToken(UserModel user, String token) {
         return requestSpec()

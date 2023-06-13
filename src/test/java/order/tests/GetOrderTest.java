@@ -31,15 +31,12 @@ public class GetOrderTest {
         RestAssured.baseURI = EndPoints.URL;
         validIngredient = getIngredientFromArray();
     }
-
-
     @After
     public void cleanUp() {
         if (accessToken != null) {
             userSteps.userDelete(accessToken);
         }
     }
-
     @Test
     @DisplayName("Get order from authorized user")
     public void getOrderFromAuthorizedUserReturnOk() {
@@ -54,7 +51,6 @@ public class GetOrderTest {
                 .and()
                 .statusCode(200);
     }
-
     @Test
     @DisplayName("Get order from notAuthorized user")
     public void getOrderFromNotAuthorizedUserReturnError() {

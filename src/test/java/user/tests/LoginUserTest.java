@@ -24,9 +24,6 @@ public class LoginUserTest {
         accessToken = response
                 .then().extract().body().path("accessToken");
     }
-
-
-
     @Test
     @DisplayName("Authorization with user data exist")
     @Description("Create new user and authorization with valid data")
@@ -37,7 +34,6 @@ public class LoginUserTest {
                 .and()
                 .statusCode(200);
     }
-
     @Test
     @DisplayName("Authorization with invalid username and password")
     @Description("Response status code 401, create user with and authorization with invalid data")
@@ -54,7 +50,6 @@ public class LoginUserTest {
                 .and()
                 .statusCode(401);
     }
-
     @After
     public void cleanUp() {
         if (accessToken != null) {

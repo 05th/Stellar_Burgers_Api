@@ -1,7 +1,5 @@
 package ingredient;
-
 import constant.EndPoints;
-
 import static io.restassured.RestAssured.given;
 
 public class IngredientRequest {

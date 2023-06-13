@@ -29,14 +29,12 @@ public class CreateOrderTest {
         RestAssured.baseURI = EndPoints.URL;
         validIngredient = getIngredientFromArray();
     }
-
     @After
     public void cleanUp() {
         if (accessToken != null) {
             userSteps.userDelete(accessToken);
         }
     }
-
     @Test
     @DisplayName("Create order with authorized user and valid ingredient hash")
     public void createOrderWithAuthorizedUserAndValidIngredientHashReturnOk() {
@@ -50,7 +48,6 @@ public class CreateOrderTest {
                 .and()
                 .statusCode(200);
     }
-
     @Test
     @DisplayName("Create order without authorized user and invalid ingredient hash")
     public void createOrderWithoutUserLoginAndEmptyIngHashShouldReturnOk() {
@@ -61,7 +58,6 @@ public class CreateOrderTest {
                 .and()
                 .statusCode(200);
     }
-
     @Test
     @DisplayName("Create order without ingredient hash")
     public void createOrderWithoutIngredientHashReturnError() {
@@ -74,7 +70,6 @@ public class CreateOrderTest {
                 .and()
                 .statusCode(400);
     }
-
     @Test
     @DisplayName("Create order with empty ingredient hash")
     public void createOrderWithEmptyIngredientHashReturnError() {
@@ -87,7 +82,6 @@ public class CreateOrderTest {
                 .and()
                 .statusCode(400);
     }
-
     @Test
     @DisplayName("Create order with wrong ingredient hash")
     public void createOrderWithWrongIngredientHashReturnError() {
@@ -100,7 +94,6 @@ public class CreateOrderTest {
         response.then().
                 statusCode(500);
     }
-
     @Test
     @DisplayName("Check ingredient in database")
     public void getStatusOfIngredients() {
@@ -112,5 +105,4 @@ public class CreateOrderTest {
                 .and()
                 .statusCode(200);
     }
-
 }

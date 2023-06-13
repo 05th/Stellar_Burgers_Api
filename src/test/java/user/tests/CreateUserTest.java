@@ -23,7 +23,6 @@ public class CreateUserTest {
             userSteps.userDelete(accessToken);
         }
     }
-
     @Test
     @DisplayName("Create new user with random valid data")
     @Description("Make sure that token is not empty")
@@ -37,7 +36,6 @@ public class CreateUserTest {
                 .and()
                 .statusCode(200);
     }
-
     @Test
     @DisplayName("Create user with registered data before")
     @Description("Response status code 403, error message \"user already exists\"")
@@ -54,9 +52,6 @@ public class CreateUserTest {
                 .and()
                 .statusCode(403);
     }
-
-
-
     @Test
     @DisplayName("Create user with empty name field")
     @Description("Response status code 403, error message \"email password and name are required fields\"")
@@ -70,5 +65,4 @@ public class CreateUserTest {
                 .and()
                 .statusCode(403);
     }
-
 }

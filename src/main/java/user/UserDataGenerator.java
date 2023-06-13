@@ -1,5 +1,4 @@
 package user;
-
 import com.github.javafaker.Faker;
 import io.qameta.allure.Step;
 

@@ -1,9 +1,7 @@
 package order;
-
 import constant.EndPoints;
 import io.qameta.allure.Step;
 import io.restassured.response.Response;
-
 import static io.restassured.RestAssured.given;
 
 public class OrderSteps {
@@ -24,8 +22,6 @@ public class OrderSteps {
                 .body(order)
                 .post(EndPoints.ORDERS);
     }
-
-
     @Step("Get data orders from user by token")
     public Response getUserDataOrder(String accessToken) {
         return given()
@@ -34,7 +30,6 @@ public class OrderSteps {
                 .baseUri(EndPoints.URL)
                 .get(EndPoints.ORDERS);
     }
-
     @Step("Get ingredients data")
     public Response getIngredientsData() {
         return given()

@@ -17,9 +17,9 @@ public class DataChangingUserTest {
     private Response response;
     private UserModel user;
     private String accessToken;
-    private String name;
-    private String email;
-    private String password;
+    protected String name;
+    protected String email;
+    protected String password;
 
     @Before
     public void setUp() {
@@ -28,7 +28,6 @@ public class DataChangingUserTest {
         accessToken = response
                 .then().extract().body().path("accessToken");
     }
-
     @Test
     @DisplayName("Change authorized user data")
     @Description("Response status code 200, create user, change name, change email")
@@ -43,7 +42,6 @@ public class DataChangingUserTest {
                 .and()
                 .statusCode(200);
     }
-
     @Test
     @DisplayName("Change authorized user password data")
     @Description("Response status code 200, create user, change password")
@@ -56,7 +54,6 @@ public class DataChangingUserTest {
                 .and()
                 .statusCode(200);
     }
-
     @Test
     @DisplayName("Change user data password without authorization")
     @Description("Response status code 401, crate user, change password")
@@ -69,7 +66,6 @@ public class DataChangingUserTest {
                 .and()
                 .statusCode(401);
     }
-
     @Test
     @DisplayName("Change unauthorized user data")
     @Description("Response status code 401, create user, change name, change email")

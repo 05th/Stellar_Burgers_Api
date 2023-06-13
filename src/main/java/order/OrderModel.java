@@ -1,7 +1,5 @@
 package order;
-
 import ingredient.IngredientModel;
-
 public class OrderModel {
     private String[] ingredients;
     private String _id;
@@ -16,5 +14,4 @@ public class OrderModel {
                 ingredient.get_id()
         };
     }
-
 }
