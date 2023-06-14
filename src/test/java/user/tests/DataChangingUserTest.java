@@ -12,15 +12,11 @@ import user.UserSteps;
 import static org.hamcrest.Matchers.equalTo;
 import static user.UserDataGenerator.faker;
 
-public class DataChangingUserTest {
+public class DataChangingUserTest extends UserModel {
     private final UserSteps userSteps = new UserSteps();
     private Response response;
     private UserModel user;
     private String accessToken;
-    protected String name;
-    protected String email;
-    protected String password;
-
     @Before
     public void setUp() {
         user = UserDataGenerator.createUserWithRandomData();
