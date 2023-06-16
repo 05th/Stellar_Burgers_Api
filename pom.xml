@@ -27,18 +27,18 @@
             <!-- модуль взаимодействия Allure и Junit -->
             <groupId>io.qameta.allure</groupId>
             <artifactId>allure-junit4</artifactId>
-            <version>${allure.version}</version>
+            <version>2.21.0</version>
         </dependency>
         <dependency>
             <!-- модуль взаимодействия Allure и RestAssured -->
             <groupId>io.qameta.allure</groupId>
             <artifactId>allure-rest-assured</artifactId>
-            <version>${allure.version}</version>
+            <version>2.21.0</version>
         </dependency>
         <dependency>
             <groupId>org.aspectj</groupId>
             <artifactId>aspectjweaver</artifactId>
-            <version>${aspectj.version}</version>
+            <version>1.9.19</version>
         </dependency>
         <!-- модуль gson для сериализации -->
         <dependency>
@@ -62,6 +62,7 @@
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.13.2</version>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 
@@ -71,7 +72,7 @@
                 <!-- настройка плагина maven-surefire-plugin -->
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>2.22.2</version>
+                <version>3.0.0-M8</version>
                 <configuration>
                     <testFailureIgnore>false</testFailureIgnore>
                     <argLine>

@@ -47,6 +47,7 @@ public class CreateOrderTest {
                 .body("success", equalTo(true))
                 .and()
                 .statusCode(200);
+
     }
     @Test
     @DisplayName("Create order without authorized user and invalid ingredient hash")
