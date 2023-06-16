@@ -12,7 +12,7 @@ import user.UserSteps;
 import static org.hamcrest.Matchers.equalTo;
 import static user.UserDataGenerator.faker;
 
-public class DataChangingUserTest extends UserModel {
+public class DataChangingUserTest {
     private final UserSteps userSteps = new UserSteps();
     private Response response;
     private UserModel user;
@@ -31,8 +31,6 @@ public class DataChangingUserTest extends UserModel {
         user.setName(faker.name().firstName());
         user.setEmail(faker.internet().emailAddress());
         response = userSteps.userDataAccountChanging(user, accessToken);
-        user.setName(name);
-        user.setEmail(email);
         response.then()
                 .body("success", equalTo(true))
                 .and()
@@ -44,7 +42,6 @@ public class DataChangingUserTest extends UserModel {
     public void changeAuthorizedUserPasswordDataReturnOk() {
         user.setPassword(faker.internet().password());
         response = userSteps.userDataAccountChanging(user, accessToken);
-        user.setPassword(password);
         response.then()
                 .body("success", equalTo(true))
                 .and()
@@ -56,7 +53,6 @@ public class DataChangingUserTest extends UserModel {
     public void changeUserDataPasswordWithoutAuthorizationReturnError() {
         user.setPassword(faker.internet().password());
         response = userSteps.userDataAccountChanging(user, "");
-        user.setPassword(password);
         response.then()
                 .body("success", equalTo(false))
                 .and()
@@ -69,8 +65,6 @@ public class DataChangingUserTest extends UserModel {
         user.setName(faker.name().firstName());
         user.setEmail(faker.internet().emailAddress());
         response = userSteps.userDataAccountChanging(user, "");
-        user.setName(name);
-        user.setEmail(email);
         response.then()
                 .body("success", equalTo(false))
                 .and()
