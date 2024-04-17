@@ -1,4 +1,4 @@
-# Diplom
+# Stellar Burgers
 
 ## Task 2: API
 
